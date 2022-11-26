@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <script src="./bundle.js" defer></script>
+</head>
+<body>
+    <header>
+        <div id="logo">ToDoList</div>
+        <div id="search">
+            <label for="search_input"></label>
+            <input type="text" id="search_input" placeholder="Search tasks...">
+        </div>
+        <div id="user_info">
+            <div id="user_avatar"></div>
+            <div id="user_name"></div>
+        </div>
+    </header>
+    <div id="sidebar">
+      <h2>My Lists</h2>
+    </div>
+
+    <div id="content">
+        <form action="/" method="post" id="modal">
+            <div id="modal_header">
+                <div id="modal_title">Add a Task</div>
+                <button id="close_modal_button" type="button">&times;</button>
+            </div>
+            <div id="modal_body">
+                <label for="title">Task title:</label>
+                <input type="text" name="title" id="title">
+                <label for="description">Description:</label>
+                <input type="text" name="description" id="description">
+                <label for="dueDate">Finish by:</label>
+                <input type="date" name="dueDate" id="dueDate">
+                <label for="priority">Priority: </label>
+                <input type="text" name="priority" id="priority">
+            </div>
+            <button id="task_add_button">+</button>
+        </form>
+    </div>
+    <div id="overlay"></div>
+</body>
+</html>
