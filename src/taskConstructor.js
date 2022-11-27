@@ -39,8 +39,21 @@ class Tasks {
         taskPriority.innerText = this.priority;
         taskContainer.appendChild(taskPriority)
         
+        let removeTaskButton = document.createElement('button');
+        removeTaskButton.innerText = 'Remove task'
+        removeTaskButton.setAttribute('class','remove_task_button')
+        taskContainer.appendChild(removeTaskButton)
+
         container.appendChild(taskContainer);
         //taskArray.push(this);
+    }
+    removeTask(title) {
+        // find title of the task in the container's first child (task title == h3 DOM element's innerText)      
+        for (let i = 0 ; i<taskArray.length;i++) {
+            if (taskArray[i].title == title) {
+                taskArray.splice(taskArray[i],1);
+            }
+        }
     }
 }
 

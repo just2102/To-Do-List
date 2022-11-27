@@ -1,3 +1,4 @@
+import { removeTaskButton, selectRemoveTaskBtns } from "./selectRemoveTaskBtns";
 import { taskArray } from "./taskArray"
 
 function getTodayTasks() {
@@ -17,6 +18,8 @@ function getTodayTasks() {
             taskArray[i].appendTask(content)
         }
     }
+    // Selects all remove task buttons inside the 'content' section after user chooses this list
+    selectRemoveTaskBtns()
 }
 
-export {getTodayTasks}
+export {getTodayTasks, removeTaskButton}
