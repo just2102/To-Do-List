@@ -1,10 +1,9 @@
+import { addTask } from './addTask';
 import { closeForm } from './closeForm';
-import { findTaskTitleToRemove } from './findTaskTitleToRemove';
 import { getTodayTasks } from './getTodayTasks';
 import { getTomorrowTasks } from './getTomorrowTasks';
 import { userName, userAvatar } from './getUserNameAvatar';
 import { pageLoad } from './pageLoad';
-import { removeTaskButton, selectRemoveTaskBtns } from './selectRemoveTaskBtns';
 import { showForm } from './showForm';
 import './style.css';
 import { taskArray } from './taskArray';
@@ -24,18 +23,6 @@ taskArray.push(task2);
 task1.removeTask();
 console.log(taskArray)
 
-let task3 = new Tasks('teswqoejwq','description',new Date(),'high')
-taskArray.push(task3);
-
-let task4 = new Tasks('testsdfjsdkfl','description',new Date(),'high')
-taskArray.push(task4);
-
-let task5 = new Tasks('ewfkjwelfjwe','description',new Date(),'medium')
-taskArray.push(task5)
-
-let task6 = new Tasks('FJWEOPRJWEOP','description',new Date(),'low')
-taskArray.push(task6);
-console.log(taskArray);
 //
 let listTodayButton = document.getElementById('list_today')
 listTodayButton.addEventListener('click',getTodayTasks)
@@ -49,5 +36,7 @@ showFormButton.addEventListener('click', showForm)
 let closeFormButton = document.getElementById('close_modal_button');
 closeFormButton.addEventListener('click',closeForm)
 
-
+let addTaskButton = document.getElementById('add_task_button')
+addTaskButton.addEventListener('click', addTask)
+addTaskButton.addEventListener('click',closeForm)
 

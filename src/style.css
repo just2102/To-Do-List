@@ -59,6 +59,12 @@ header img {
     font-size: large;
     cursor: pointer;
 }
+.list_button {
+
+}
+.list_button.active {
+    box-shadow: 5px 5px;
+}
 
 
 
@@ -111,6 +117,11 @@ header img {
 #modal #modal_body {
     padding:10px 10px;
 }
+
+#modal fieldset {
+    padding:3px;
+}
+
 #overlay {
     position:fixed;
     opacity: 0; 
