@@ -36,7 +36,7 @@ class Tasks {
         taskContainer.appendChild(taskDueDate)
 
         let taskPriority = document.createElement('a');
-        taskPriority.innerText = this.priority;
+        taskPriority.innerText = 'Priority: ' + this.priority;
         taskContainer.appendChild(taskPriority)
         
         let removeTaskButton = document.createElement('button');

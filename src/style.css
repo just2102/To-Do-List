@@ -75,8 +75,50 @@ header img {
     background-color: var(--secondary-container-color)
 }
 
+.task_container {
+    display:grid;
+    align-items: center;
+    justify-items: center;
+    border-bottom: 2px solid #292524;
+}
+.task_container h3 {
+    width:100%;
+    border-bottom: 2px solid #292524;
+}
+.task_container h4 {
+    width:100%;
+}
+
+.remove_task_button {
+    background: rgb(112, 89, 116);
+    border:none;
+    padding:5px;
+    border-radius: 10px;
+    transition: 150ms;
+    font-size:larger;
+}
+.remove_task_button:hover {
+    background: rgb(93, 80, 102);
+    cursor: pointer;
+}
 
 /* form (modal) */
+#overlay {
+    position:fixed;
+    opacity: 0; 
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,.5);
+    pointer-events:none;
+    transition:200ms ease-in-out;
+}
+#overlay.active {
+    pointer-events:all;
+    opacity:1;
+}
+
 #modal {
     display:grid;
     position:fixed;
@@ -91,6 +133,7 @@ header img {
     width:500px;
     max-width:80%;
     transition: 200ms ease-in-out;
+    background-color: var(--secondary-container-color);
 }
 #modal.active {
     transform: translate(-50%,-50%) scale(1);
@@ -115,6 +158,7 @@ header img {
     font-weight:bold;
 }
 #modal #modal_body {
+    display:grid;
     padding:10px 10px;
 }
 
@@ -122,26 +166,31 @@ header img {
     padding:3px;
 }
 
-#overlay {
-    position:fixed;
-    opacity: 0; 
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background: rgba(0,0,0,.5);
-    pointer-events:none;
-    transition:200ms ease-in-out;
-}
-#overlay.active {
-    pointer-events:all;
-    opacity:1;
+#modal .input_error {
+    display:none;
+    color:red;
 }
 
 
+#modal input:focus {
+    outline: none;
+    border:solid 1.5px rgb(219, 186, 228);
+    box-shadow: 3px 5px rgb(195, 148, 191);
+}
 
-
-
+#modal #add_task_button {
+    background: rgb(112, 89, 116);
+    border:none;
+    padding:5px;
+    border-radius: 10px;
+    transition: 150ms;
+    font-size:larger;
+}
+#modal #add_task_button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow:3px 5px var(--additional-container-color);
+}
 
 
 

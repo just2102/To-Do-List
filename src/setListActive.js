@@ -1,5 +1,0 @@
-function setListActive () {
-    
-}
-
-export {setListActive};

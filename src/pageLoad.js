@@ -1,4 +1,3 @@
-import { setListActive } from "./setListActive"
 import { taskArray } from "./taskArray"
 import { Tasks } from "./taskConstructor"
 
@@ -24,14 +23,31 @@ function pageLoad(name,avatar) {
     listTomorrow.setAttribute('class','list_button')
     sidebar.appendChild(listTomorrow)
 
-   
-    let taskContainer = document.getElementById('content')
+    let listLow = document.createElement('button');
+    listLow.innerText = 'Low Priority'
+    listLow.setAttribute('id','list_low');
+    listLow.setAttribute('class','list_button');
+    sidebar.appendChild(listLow);
 
-    // button to add new task
+    let listMedium = document.createElement('button');
+    listMedium.innerText = 'Medium Priority'
+    listMedium.setAttribute('id','list_medium');
+    listMedium.setAttribute('class','list_button');
+    sidebar.appendChild(listMedium);
+
+    let listHigh = document.createElement('button');
+    listHigh.innerText = 'High Priority'
+    listHigh.setAttribute('id','list_high');
+    listHigh.setAttribute('class','list_button');
+    sidebar.appendChild(listHigh);
+   
+    let content = document.getElementById('content')
+
+    // button to show 'add task' form
     let showFormButton = document.createElement('button');
     showFormButton.setAttribute('id','show_form_button')
     showFormButton.innerText = 'Add task'
-    taskContainer.appendChild(showFormButton)
+    content.appendChild(showFormButton)
 
     // select all list buttons
     let listButtons = document.querySelectorAll('.list_button')
