@@ -36,10 +36,20 @@
                 <input type="text" name="description" id="description">
                 <label for="dueDate">Finish by:</label>
                 <input type="date" name="dueDate" id="dueDate">
-                <label for="priority">Priority: </label>
-                <input type="text" name="priority" id="priority">
+                <fieldset>
+                    <legend>Priority: </legend>
+                    
+                    <input type="radio" name="priority" id="low_priority" value="low">
+                    <label for="low_priority">Low</label>
+
+                    <input type="radio" name="priority" id="medium_priority" value="medium">
+                    <label for="medium_priority">Medium</label>
+
+                    <input type="radio" name="priority" id="high_priority" value="high" >
+                    <label for="high_priority">High</label>
+                </fieldset>
             </div>
-            <button id="task_add_button">+</button>
+            <button id="add_task_button" type="button">+</button>
         </form>
     </div>
     <div id="overlay"></div>
