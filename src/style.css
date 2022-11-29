@@ -60,10 +60,20 @@ header img {
     cursor: pointer;
 }
 .list_button {
-
+    background: pink;
+    border-radius: 10px;
+    border:solid 1px;
 }
 .list_button.active {
     box-shadow: 5px 5px;
+    color:whitesmoke;
+    background: rgb(118, 76, 104);
+    transition: 100ms;
+}
+.list_button.active:hover {
+    box-shadow: 5px 5px;
+    background: rgb(118, 76, 104,0.8);
+    cursor:progress;
 }
 
 
@@ -176,6 +186,9 @@ header img {
     outline: none;
     border:solid 1.5px rgb(219, 186, 228);
     box-shadow: 3px 5px rgb(195, 148, 191);
+}
+#modal input:invalid {
+    border:red;
 }
 
 #modal #add_task_button {

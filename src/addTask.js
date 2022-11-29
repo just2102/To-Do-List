@@ -1,8 +1,10 @@
+import { checkForTasks } from "./checkForTasks";
 import { closeForm } from "./closeForm";
 import { selectRemoveTaskBtns } from "./selectRemoveTaskBtns";
 import { taskArray } from "./taskArray";
 import { Tasks } from "./taskConstructor";
 import { validateForm } from "./validateForm";
+
 
 
 
@@ -12,6 +14,9 @@ function addTask() {
 
     let inputDescription = document.getElementById('description').value;
     let inputDueDate = new Date(document.getElementById('dueDate').value);
+    // format date
+
+
     let dateErrorMessage = document.getElementById('date_error')
 
     let inputPriorityButtonGroup = document.getElementsByName('priority');
@@ -49,14 +54,22 @@ function addTask() {
         let newTask = new Tasks(inputTitle,inputDescription,inputDueDate,inputPriority);
         taskArray.push(newTask)
         console.log(taskArray)
+        console.log('type of date: ' + typeof newTask.dueDate)
+        console.log('date: ' +newTask.dueDate)
     
         let content = document.getElementById('content');
-        newTask.appendTask(content)
+        newTask.appendTask(content)        
+        
+
         closeForm()
         selectRemoveTaskBtns();
+
     } else if (validateForm()==true && findDuplicates()==true) {
         alert('Task with this title already exists! Please choose a different one')
     }
+
+    checkForTasks()
+
 }
 
 export {addTask}

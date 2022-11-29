@@ -1,3 +1,4 @@
+import { checkForTasks } from "./checkForTasks";
 import { removeTaskButton } from "./selectRemoveTaskBtns";
 import { taskArray } from "./taskArray";
 let title = '';
@@ -9,7 +10,8 @@ function findTaskTitleToRemove() {
             // removes task from taskArray
             removeTaskByTitle(title)
             // removes the parent DOM element associated with current 'remove task' button
-            button.parentElement.remove();
+            button.parentElement.remove();    
+
         })
     })
 }
@@ -19,6 +21,7 @@ function removeTaskByTitle (title) {
     })
     taskArray.splice(currentTaskIndex,1);
     console.log(taskArray);
+    checkForTasks();
 }
 
 

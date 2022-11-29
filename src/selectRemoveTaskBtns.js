@@ -6,7 +6,6 @@ let removeTaskButton = document.querySelectorAll('.remove_task_button')
 // and starts the findTaskTitleToRemove function
 function selectRemoveTaskBtns() {
     removeTaskButton = document.querySelectorAll('.remove_task_button')
-    console.log(removeTaskButton)
     findTaskTitleToRemove()
 }
 export {removeTaskButton, selectRemoveTaskBtns}

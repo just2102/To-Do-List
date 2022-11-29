@@ -1,3 +1,4 @@
+import { checkForTasks } from "./checkForTasks"
 import { taskArray } from "./taskArray"
 import { Tasks } from "./taskConstructor"
 
@@ -49,9 +50,8 @@ function pageLoad(name,avatar) {
     showFormButton.innerText = 'Add task'
     content.appendChild(showFormButton)
 
-    // select all list buttons
-    let listButtons = document.querySelectorAll('.list_button')
-    
+    // selects all list buttons to check if there are any tasks inside of them. if there are, visually display it
+
 }
 
 export {pageLoad, taskArray}

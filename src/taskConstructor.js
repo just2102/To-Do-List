@@ -1,4 +1,5 @@
 import { taskArray } from "./taskArray";
+import { format } from 'date-fns'
 
 class Tasks {
     constructor(title,description,dueDate,priority) {
@@ -32,7 +33,7 @@ class Tasks {
         taskContainer.appendChild(taskDescription)
 
         let taskDueDate = document.createElement('div');
-        taskDueDate.innerText = this.dueDate;
+        taskDueDate.innerText =     format(new Date(this.dueDate), 'EEEE, MMMM, dd');
         taskContainer.appendChild(taskDueDate)
 
         let taskPriority = document.createElement('a');

@@ -1,4 +1,5 @@
 import { addTask } from './addTask';
+import { checkForTasks } from './checkForTasks';
 import { closeForm } from './closeForm';
 import { getHighTasks } from './getHighTasks';
 import { getLowTasks } from './getLowTasks';
@@ -11,19 +12,13 @@ import { showForm } from './showForm';
 import './style.css';
 import { taskArray } from './taskArray';
 import { Tasks } from './taskConstructor';
+import { validateForm } from './validateForm';
 
 pageLoad(userName,userAvatar)
+
 // debug
 let taskContainer = document.getElementById('content')
-let task1 = new Tasks('test1','descrip',new Date(),'High')
-taskArray.push(task1)
 
-let task2 = new Tasks('test2','description',new Date(),'Low')
-task2.dueDate.setDate(27);
-taskArray.push(task2);
-
-
-task1.removeTask();
 console.log(taskArray)
 
 //
@@ -58,3 +53,9 @@ addTaskButton.addEventListener('click',function(event) {
 
 addTaskButton.addEventListener('click', addTask)
 
+
+
+let allInputs = Array.from(document.getElementsByTagName('input'))
+allInputs.forEach(element => {
+    element.addEventListener('change',validateForm)
+});
